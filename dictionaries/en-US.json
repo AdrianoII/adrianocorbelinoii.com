@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "homepage": "Homepage",
+        "about": "About",
+        "projects": "Projects",
+        "language_switcher_title": "Switch language"
+    },
+    "theme_toggler": {
+        "theme_toggler_title": "Toggle theme"
+    },
+    "about": {
+        "hello_there": "Hello There! 👋",
+        "about": "I am a Brazilian computer scientist that is constantly thrilled with the impact that type systems can have on users. I have experience with software development and I am aficionado about topics like Type Theory, Formal Verification, Systems programming, and everything in between. Nowadays, actively seeking a graduate school opportunity in the programming languages academic community.",
+        "find_me": "👇 You can find me on 👇",
+        "email_title": "My Email",
+        "github_title": "My Github Profile",
+        "linkedin_title": "My Linkedin Profile",
+        "twitter_title": "My Twitter"
+    },
+    "cv": {
+        "find1": "📃 You can find my CV below, but also ",
+        "find2": "here",
+        "find3": " and ",
+        "find4": "there",
+        "find5": ".",
+        "fallback": "Unable to display PDF file. Please use links above.",
+        "link1": "/Resume_EN.pdf",
+        "link2": "/Resume_EN.pdf"
+    }
+}

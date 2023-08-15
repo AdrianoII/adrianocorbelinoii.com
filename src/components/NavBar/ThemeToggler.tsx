@@ -2,8 +2,10 @@
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react";
 import "./ThemeToggler.css"
+import { Dictionary } from "@/app/[locale]/dictionaries";
 
-export default function ThemeToggler() {
+export default function ThemeToggler({ locale, dict }: { locale: "en-US" | "pt-BR", dict: Dictionary }) {
+    const d = dict.theme_toggler;
     const { resolvedTheme, setTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
 
@@ -18,7 +20,7 @@ export default function ThemeToggler() {
     }
 
     const isDarkMode = resolvedTheme === "dark";
-    return <label className="swap btn btn-ghost">
+    return <label className="swap btn btn-ghost" title={d.theme_toggler_title}>
         <input id="theme-check" className="hidden" type="checkbox" readOnly checked={!isDarkMode} onClick={() => { console.log(resolvedTheme, isDarkMode); setTheme(isDarkMode ? 'light' : 'dark') }} />
         {/* sun */}
         <svg className={`swap-off w-8 h-8 ${!isDarkMode ? "roll-in-right" : "hidden"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

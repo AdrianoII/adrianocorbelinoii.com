@@ -1,0 +1,30 @@
+{
+    "navbar": {
+        "homepage": "Página Inicial",
+        "about": "Sobre",
+        "projects": "Projetos",
+        "language_switcher_title": "Mudar o idioma"
+    },
+    "theme_toggler": {
+        "theme_toggler_title": "Alternar o tema"
+    },
+    "about": {
+        "hello_there": "Olá! 👋",
+        "about": "Aficionado por ciência computação, principalmente temas relacionados a linguagens de programação e desenvolvimento de sistemas.",
+        "find_me": "👇 Você pode me achar no 👇",
+        "email_title": "Meu e-mail",
+        "github_title": "Meu perfil no Github",
+        "linkedin_title": "Meu perfil no Linkedin ",
+        "twitter_title": "My perfil no Twitter"
+    },
+    "cv": {
+        "find1": "📃 Você pode obter meu CV abaixo, mais também ",
+        "find2": "aqui",
+        "find3": " e ",
+        "find4": "acolá",
+        "find5": ".",
+        "fallback": "Unable to display PDF file. Please use links above.",
+        "link1": "/Resume_PT.pdf",
+        "link2": "/Resume_PT.pdf"
+    }
+}
