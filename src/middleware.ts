@@ -36,6 +36,9 @@ export function middleware(request: NextRequest) {
             "/Resume_EN.pdf",
             "/Resume_PT.pdf",
             "/perfil.jpg",
+            "/perfil1.jpg",
+            "/perfil2.jpg",
+            "/perfil3.jpg",
             "/hello.wasm",
             "/favicon.svg",
             // Your other files in `public`

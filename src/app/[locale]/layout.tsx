@@ -28,7 +28,7 @@ export default async function RootLayout({ children, params }: Params) {
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="h-screen w-screen px-16 py-4 flex flex-col">
+      <body className="flex flex-col px-4 lg:h-screen lg:w-screen lg:px-16 lg:py-4 lg:max-h-screen">
         <ThemeProvider>
           <NavBar locale={params.locale} dict={dict} />
           {children}

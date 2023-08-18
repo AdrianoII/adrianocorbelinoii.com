@@ -10,11 +10,12 @@
     },
     "about": {
         "hello_there": "Olá! 👋",
-        "about": "Aficionado por ciência computação, principalmente temas relacionados a linguagens de programação e desenvolvimento de sistemas.",
+        "about": "Eu sou bacharel em Ciência da Computação, apaixonado pelas especificidades das linguagens de programação e como elas podem afetar seus usuários. Possuo experiencia com desenvolvimento de software e meus três principais interesses são: Teoria dos Tipos, Verificação Formal e Desenvolvimento de Sistemas.",
         "find_me": "👇 Você pode me achar no 👇",
         "email_title": "Meu e-mail",
         "github_title": "Meu perfil no Github",
         "linkedin_title": "Meu perfil no Linkedin ",
+        "linkedin_link": "https://www.linkedin.com/in/adrianoii/",
         "twitter_title": "My perfil no Twitter"
     },
     "cv": {
