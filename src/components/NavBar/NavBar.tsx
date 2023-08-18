@@ -80,7 +80,6 @@ export default function NavBar({ locale, dict }: { locale: "en-US" | "pt-BR", di
                         </Link>
                     </li>
 
-                    <div className="divider" />
 
                     <li className={`btn btn-ghost ${bare_path === "/projects" ? "btn-active" : ""} no-animation`} onClick={() => setIsDrawerOpen(false)}>
                         <Link href={`/${locale}/projects`} className="w-full place-content-center">
@@ -88,14 +87,11 @@ export default function NavBar({ locale, dict }: { locale: "en-US" | "pt-BR", di
                         </Link>
                     </li>
 
-                    <div className="divider" />
-
                     <li className={`btn btn-ghost ${bare_path === "/cv" ? "btn-active" : ""} no-animation`} onClick={() => setIsDrawerOpen(false)}>
                         <Link href={`/${locale}/cv`} className="w-full place-content-center">
                             CV
                         </Link>
                     </li>
-                    <div className="divider" />
                     <li>
                         <div className="flex w-full">
                             <div className="grid flex-grow place-items-center">
