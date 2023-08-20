@@ -4,6 +4,7 @@ import "../globals.css"
 import { i18n } from "../../../i18n-config"
 import { ThemeProvider } from "../../components/ThemeProvider"
 import { getDictionary } from './dictionaries'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: "Adriano Corbelino II",
@@ -32,6 +33,7 @@ export default async function RootLayout({ children, params }: Params) {
         <ThemeProvider>
           <NavBar locale={params.locale} dict={dict} />
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html >
