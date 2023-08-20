@@ -2,11 +2,13 @@
     "navbar": {
         "homepage": "Homepage",
         "about": "About",
-        "projects": "Projects",
-        "language_switcher_title": "Switch language"
+        "projects": "Projects"
     },
     "theme_toggler": {
         "theme_toggler_title": "Toggle theme"
+    },
+    "locale_switcher": {
+        "title": "Switch language"
     },
     "about": {
         "hello_there": "Hello There! 👋",

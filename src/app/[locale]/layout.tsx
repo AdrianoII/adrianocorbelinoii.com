@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import NavBar from "../../components/NavBar/NavBar"
 import "../globals.css"
-import { i18n } from "../../../i18n-config"
+import { i18n } from "../../i18n-config"
 import { ThemeProvider } from "../../components/ThemeProvider"
 import { getDictionary } from './dictionaries'
 import { Analytics } from '@vercel/analytics/react';
