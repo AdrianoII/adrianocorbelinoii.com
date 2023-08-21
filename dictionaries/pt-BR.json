@@ -27,7 +27,8 @@
         "find4": "acolá",
         "find5": ".",
         "fallback": "Unable to display PDF file. Please use links above.",
-        "link1": "/Resume_PT.pdf",
-        "link2": "/Resume_PT.pdf"
+        "link1": "https://www.adrianocorbelinoii.com/Resume_PT.pdf",
+        "link2": "https://github.com/AdrianoII/adrianocorbelinoii.com/blob/main/public/Resume_PT.pdf",
+        "link3": "https://drive.google.com/file/d/1dSiRNuvTjSnOlJwGXAjij3QLqpm7zp04/view?usp=drive_link"
     }
 }

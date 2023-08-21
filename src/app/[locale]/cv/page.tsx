@@ -17,10 +17,8 @@ export default async function Page({ params }: {
                 </article>
             </div>
             <div className="basis-11/12">
-                <object data={d.link1} type="application/pdf" className="w-full h-full">
-                    <embed src={d.link1} type="application/pdf" />
-                    <p>{dict.cv.fallback}</p>
-                </object>
+                <iframe src={`https://docs.google.com/gview?url=${d.link1}&embedded=true`}
+                    className="w-full h-full" />
             </div>
         </section>
     )

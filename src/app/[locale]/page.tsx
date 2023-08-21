@@ -27,7 +27,7 @@ export default async function Page({ params }: {
                         <p className="text-center text-accent-content dark:text-primary-focus">
                             {d.about}
                         </p>
-                        <p className="text-center text-accent dark:text-info text-4xl">{d.find_me}</p>
+                        <p className="text-center text-accent dark:text-info text-2xl lg:text-4xl">{d.find_me}</p>
                         <p>
                             <span className="flex flex-row justify-center gap-6 pb-4">
 
