@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ProfilePic from "/public/perfil.png"
+import ProfilePic from "/public/profile.webp"
 import "./Page.css"
 import { getDictionary } from './dictionaries'
 
@@ -24,7 +24,7 @@ export default async function Page({ params }: {
                 <aside className="basis-3/5 mt-8  grid place-items-center">
                     <article className="prose lg:prose-2xl">
                         <h1 className="text-center">{d.hello_there}</h1>
-                        <p className="text-justify text-accent-content dark:text-primary-focus">
+                        <p className="text-center text-accent-content dark:text-primary-focus">
                             {d.about}
                         </p>
                         <p className="text-center text-accent dark:text-info text-4xl">{d.find_me}</p>
