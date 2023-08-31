@@ -1,4 +1,16 @@
 import { getDictionary } from '../dictionaries'
+import type { Metadata } from "next"
+
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: 'https://www.adrianocorbelinoii.com/cv',
+        languages: {
+            'en-US': 'https://www.adrianocorbelinoii.com/en-US/cv',
+            'pt-BR': 'https://www.adrianocorbelinoii.com/pt-BR/cv',
+        },
+    },
+}
 
 type Params = {
     locale: "en-US" | "pt-BR",

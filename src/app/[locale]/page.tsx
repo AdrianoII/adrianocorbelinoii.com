@@ -2,6 +2,19 @@ import Image from "next/image"
 import ProfilePic from "/public/profile.webp"
 import "./Page.css"
 import { getDictionary } from './dictionaries'
+import type { Metadata } from "next"
+
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: 'https://www.adrianocorbelinoii.com/',
+        languages: {
+            'en-US': 'https://www.adrianocorbelinoii.com/en-US',
+            'pt-BR': 'https://www.adrianocorbelinoii.com/pt-BR',
+        },
+    },
+}
+
 
 type Params = {
     locale: "en-US" | "pt-BR",
@@ -18,7 +31,10 @@ export default async function Page({ params }: {
             <div className="h-full flex flex-col lg:flex-row lg:gap-6">
                 <aside className="basis-2/5 grid place-items-center">
                     <div className="h-[60vh] w-full lg:h-full relative -z-[9]">
-                        <Image fill objectFit="contain" className="mask mask-parallelogram-3 slit-in-diagonal-2 -z-10" src={ProfilePic} alt="Picture of Adriano Corbelino II" quality={100} />
+                        <Image fill objectFit="contain"
+                            className="mask mask-parallelogram-3 -z-10 slit-in-diagonal-2" src={ProfilePic}
+                            alt="Picture of Adriano Corbelino II" quality={80}
+                            placeholder="blur" />
                     </div>
                 </aside>
                 <aside className="basis-3/5 mt-8  grid place-items-center">
