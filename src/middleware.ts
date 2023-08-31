@@ -62,7 +62,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ['/', '/cv', '/projects', '/en-US', '/en-US/cv',
-        '/en-US/projects', '/pt-BR', '/pt-BR/cv', '/pt-BR/projects'
+    matcher: ['/', '/cv', '/projects',
+        '/en-US', '/en-US/cv', '/en-US/projects',
+        '/pt-BR', '/pt-BR/cv', '/pt-BR/projects'
     ],
 }

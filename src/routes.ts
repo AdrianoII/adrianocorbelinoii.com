@@ -5,8 +5,6 @@ export const pages = ["", "cv", "projects"];
 
 const locales = [""].concat(i18n.locales);
 
-i18n.locales
-
 export const routes = locales.map(loc => pages.map(p => {
     if (loc === "") {
         return `/${p}`

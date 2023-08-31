@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://adrianocorbelinoii.com</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en-US"
+               href="https://adrianocorbelinoii.com/en-US"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="pt-BR"
+               href="https://adrianocorbelinoii.com/pt-BR"/>
+    <lastmod>2023-08-31T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adrianocorbelinoii.com/projects</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en-US"
+               href="https://adrianocorbelinoii.com/en-US/projects"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="pt-BR"
+               href="https://adrianocorbelinoii.com/pt-BR/projects"/>
+    <lastmod>2023-08-31T00:00:00.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://adrianocorbelinoii.com/cv</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="en-US"
+               href="https://adrianocorbelinoii.com/en-US/cv"/>
+    <xhtml:link
+               rel="alternate"
+               hreflang="pt-BR"
+               href="https://adrianocorbelinoii.com/pt-BR/cv"/>
+    <lastmod>2023-08-31T00:00:00.000Z</lastmod>
+  </url>
+</urlset>
