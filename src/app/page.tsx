@@ -15,10 +15,11 @@ export default function HomePage() {
     <section className="flex flex-1 flex-col items-center justify-center gap-8 py-8">
       <div className="slit-in-diagonal relative aspect-square w-full max-w-sm">
         <Image
-          src="/profile.webp"
+          src="/profile.jpg"
           alt="Picture of Adriano Corbelino II"
           fill
           priority
+          quality={90}
           sizes="(min-width: 640px) 384px, 90vw"
           className="object-contain"
         />
