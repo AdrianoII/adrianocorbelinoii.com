@@ -1,0 +1,40 @@
+name: Render CV
+
+# Regenerates the committed CV artifacts whenever the Quarto source changes:
+#   public/Resume_EN.pdf          (download)
+#   src/content/cv.generated.html (injected into the /cv page)
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - name: Render CV (PDF + HTML fragment)
+        run: ./cv/build.sh
+
+      - name: Commit regenerated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet public/Resume_EN.pdf src/content/cv.generated.html; then
+            git add public/Resume_EN.pdf src/content/cv.generated.html
+            git commit -m "chore(cv): regenerate CV artifacts [skip ci]"
+            git push
+          else
+            echo "No artifact changes."
+          fi

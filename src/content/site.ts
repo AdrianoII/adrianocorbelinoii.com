@@ -13,12 +13,16 @@ export const about = {
 } as const
 
 export const cv = {
-  intro: "📃 You can find my CV below, but also",
-  pdfUrl: "https://www.adrianocorbelinoii.com/Resume_EN.pdf",
-  githubUrl:
-    "https://github.com/AdrianoII/adrianocorbelinoii.com/blob/main/public/Resume_EN.pdf",
-  viewerUrl:
-    "https://docs.google.com/gview?url=https://www.adrianocorbelinoii.com/Resume_EN.pdf&embedded=true",
+  // Authored in cv/cv.qmd (Quarto); `cv/build.sh` regenerates the PDF below
+  // and the injected HTML fragment at src/content/cv.generated.html.
+  pdfUrl: "/Resume_EN.pdf",
+  sourceUrl: "https://github.com/AdrianoII/adrianocorbelinoii.com/blob/main/cv/cv.qmd",
+  email: "adriano_vilargacorbelino@uml.edu",
+  location: "Lowell, MA, USA",
+  links: [
+    { label: "GitHub", href: "https://github.com/AdrianoII" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/adrianoii/" },
+  ],
 } as const
 
 export type NavItem = {

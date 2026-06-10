@@ -1,0 +1,130 @@
+---
+# Single source of truth for the CV.
+# Renders to two committed artifacts via ./build.sh:
+#   ../public/Resume_EN.pdf          (download)
+#   ../src/content/cv.generated.html (injected into the /cv page)
+#
+# Entry layout convention: a bold/italic line followed by a right-aligned
+# `[date]{.cv-meta}` span. The `\hfill`{=latex} pushes it right in the PDF;
+# CSS (.cv-content) floats the span right on the web. One source, both formats.
+format:
+  pdf:
+    geometry: "margin=0.55in"
+    fontsize: 11pt
+    colorlinks: true
+    linkcolor: "RoyalBlue"
+    urlcolor: "RoyalBlue"
+    include-before-body: header.tex
+    include-in-header:
+      text: |
+        \usepackage[default]{sourcesanspro}
+        \usepackage{titlesec}
+        \usepackage{xcolor}
+        \usepackage{enumitem}
+        \definecolor{accent}{RGB}{198,143,44}
+        \definecolor{rulecol}{RGB}{135,34,19}
+        \titleformat{\section}{\large\scshape\bfseries\color{accent}}{}{0em}{}[{\color{rulecol}\titlerule}]
+        \titlespacing*{\section}{0pt}{10pt}{3pt}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{2pt}
+        \setlist[itemize]{leftmargin=1.3em,topsep=1pt,itemsep=1pt,parsep=0pt}
+        \pagenumbering{gobble}
+bibliography: publications.bib
+csl: numeric.csl
+link-citations: true
+---
+
+# Education
+
+**University of Massachusetts Lowell**`\hfill`{=latex}[Lowell, MA, USA]{.cv-meta}
+
+*Third-year Computer Science PhD student — GPA 4.0/4.0*`\hfill`{=latex}[Jan 2024 – Now]{.cv-meta}
+
+**Federal University of Mato Grosso (UFMT)**`\hfill`{=latex}[Cuiabá, MT, Brazil]{.cv-meta}
+
+*B.Sc. in Computer Science — GPA 3.62/4.0 (8.84/10.0)*`\hfill`{=latex}[2017 – 2021]{.cv-meta}
+
+# Research Experience
+
+**Graduate Research Assistant**`\hfill`{=latex}[2024 – Now]{.cv-meta}
+
+*University of Massachusetts Lowell — advised by Prof. Paul Downen*`\hfill`{=latex}[Lowell, MA, USA]{.cv-meta}
+
+- Study how codata and copatterns can bridge the functional and object-oriented
+  paradigms, giving programmers a declarative way to define infinite and
+  effectful objects.
+- Developing **CoPy**, a Python language extension that brings copattern-based
+  object-oriented programming to Python.
+- Contributed to **CoScheme** [@coscheme], a Racket/Scheme macro library for
+  compositional copatterns backed by a sound equational theory.
+
+**Undergraduate Research Assistant**`\hfill`{=latex}[2020 – 2021]{.cv-meta}
+
+*Federal University of Mato Grosso*`\hfill`{=latex}[Cuiabá, MT, Brazil]{.cv-meta}
+
+- Evaluated audio data-augmentation methods for bird-call classification.
+
+**Research Assistant**`\hfill`{=latex}[2020 – 2021]{.cv-meta}
+
+*Federal University of Mato Grosso*`\hfill`{=latex}[Cuiabá, MT, Brazil]{.cv-meta}
+
+- Co-created **RSDD** [@rsdd], a satellite-imagery dataset for modeling
+  deforestation in the Brazilian state of Mato Grosso.
+
+# Teaching Experience
+
+**Undergraduate Teaching Assistant**`\hfill`{=latex}[2018 – 2021]{.cv-meta}
+
+*Federal University of Mato Grosso*`\hfill`{=latex}[Cuiabá, MT, Brazil]{.cv-meta}
+
+- Designed problem sets and led recitations and office hours across five courses:
+  Discrete Mathematics, Data Structures, Theory of Computation, Algorithms, and
+  Compilers.
+
+# Industry Experience
+
+**Software Engineer**`\hfill`{=latex}[2021 – 2022]{.cv-meta}
+
+*Acerto*`\hfill`{=latex}[Remote · Belo Horizonte, MG, Brazil]{.cv-meta}
+
+- Built in-house tools that automated workflows for non-technical teams and
+  optimized database queries at a debt-collection company.
+<!-- stack: C#, Python, PostgreSQL -->
+
+**Software Engineer Intern**`\hfill`{=latex}[2018 – 2021]{.cv-meta}
+
+*NUTI-IC*`\hfill`{=latex}[Cuiabá, MT, Brazil]{.cv-meta}
+
+- Developed a health-surveillance data system and public-health dashboards for
+  the Mato Grosso State Health Department.
+- Built a report-management system for POLITEC-MT, the state forensic-services
+  department.
+<!-- stack: C#, .NET, ASP.NET MVC, jQuery, SQL Server; POLITEC: Java, Spring, React, PostgreSQL -->
+
+# Awards & Honors
+
+**ICPC South America / Brazil Finalist**`\hfill`{=latex}[2021]{.cv-meta}
+
+**Outstanding Graduating Student (*Aluno Destaque*)**`\hfill`{=latex}[2020/2]{.cv-meta}
+
+*Federal University of Mato Grosso*
+
+<!-- test scores (uncomment to include):
+TOEFL iBT 105 (R 28, L 29, S 22, W 26) · GRE 317 (V 155, Q 162, AW 3.5)
+-->
+
+# Technical Skills
+
+Languages
+:   Rocq/Coq, Lean, Haskell, Rust, Python, C#, C, and JavaScript
+
+Tools & Databases
+:   PostgreSQL, Microsoft SQL Server, .NET, Git, and QGIS
+
+Spoken
+:   Portuguese (native) and English (fluent)
+
+# Publications
+
+::: {#refs}
+:::

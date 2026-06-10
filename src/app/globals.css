@@ -42,6 +42,48 @@
   }
 }
 
+/* CV fragment (generated from cv/cv.qmd) — recreate the print template's look:
+   gold uppercase section headers with a rule, and right-aligned dates. */
+@layer components {
+  .cv-content h2 {
+    margin: 1.5rem 0 0.5rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid hsl(43 60% 52% / 0.35);
+    color: hsl(43 65% 60%);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cv-content h2:first-child {
+    margin-top: 0;
+  }
+  /* entry lines: title/role on the left, date/place right-aligned */
+  .cv-content p:has(.cv-meta) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.15rem 0;
+  }
+  .cv-content .cv-meta {
+    flex-shrink: 0;
+    color: hsl(var(--muted-foreground));
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .cv-content ul {
+    margin: 0.35rem 0 0.75rem;
+  }
+  .cv-content li {
+    margin: 0.15rem 0;
+  }
+  /* bibliography (Publications) hanging indent */
+  .cv-content .csl-entry {
+    margin: 0.35rem 0;
+  }
+}
+
 @keyframes slit-in-diagonal {
   0% {
     transform: translateZ(-800px) rotate3d(-1, 1, 0, -90deg);

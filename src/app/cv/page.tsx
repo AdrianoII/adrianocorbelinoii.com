@@ -1,6 +1,10 @@
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
 import type { Metadata } from "next"
+import { Download, FileText } from "lucide-react"
 
-import { cv } from "@/content/site"
+import { cv, siteConfig } from "@/content/site"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "CV",
@@ -9,32 +13,61 @@ export const metadata: Metadata = {
   },
 }
 
+// Generated from cv/cv.qmd by cv/build.sh — a trusted, body-only HTML fragment.
+const cvHtml = readFileSync(
+  join(process.cwd(), "src/content/cv.generated.html"),
+  "utf8"
+)
+
 export default function CvPage() {
   return (
-    <section className="flex flex-1 flex-col gap-4 py-4">
-      <p className="text-center text-lg lg:text-2xl">
-        {cv.intro}{" "}
-        <a
-          href={cv.pdfUrl}
-          className="font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground"
-        >
-          here
-        </a>{" "}
-        and{" "}
-        <a
-          href={cv.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground"
-        >
-          there
-        </a>
-        .
-      </p>
-      <iframe
-        src={cv.viewerUrl}
-        title="Adriano Corbelino II — CV"
-        className="min-h-[70vh] w-full flex-1 rounded-md border border-border"
+    <section className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 py-6">
+      <header className="flex flex-col gap-4 border-b border-border pb-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="space-y-1">
+          <h1 className="text-3xl font-bold lg:text-4xl">{siteConfig.name}</h1>
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            <a
+              href={`mailto:${cv.email}`}
+              className="hover:text-foreground"
+            >
+              {cv.email}
+            </a>
+            <span aria-hidden>·</span>
+            <span>{cv.location}</span>
+            {cv.links.map((link) => (
+              <span key={link.href} className="contents">
+                <span aria-hidden>·</span>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
+          <Button asChild>
+            <a href={cv.pdfUrl} download>
+              <Download />
+              Download PDF
+            </a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href={cv.sourceUrl} target="_blank" rel="noopener noreferrer">
+              <FileText />
+              Source
+            </a>
+          </Button>
+        </div>
+      </header>
+
+      <article
+        className="cv-content prose prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: cvHtml }}
       />
     </section>
   )

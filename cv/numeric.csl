@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Minimal numeric (IEEE-like) citation style, authored locally for this CV.
+     Inline citations render as [1]; the bibliography is a numbered list ordered
+     by first appearance. Used for both the PDF and the web fragment so the
+     numbering matches. -->
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
+  <info>
+    <title>Numeric (CV)</title>
+    <id>https://adrianocorbelinoii.com/styles/numeric</id>
+    <updated>2026-01-01T00:00:00+00:00</updated>
+  </info>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=", " suffix=".">
+        <names variable="author">
+          <name and="text" initialize-with=". " delimiter=", "/>
+        </names>
+        <text variable="title" quotes="true"/>
+        <group delimiter=", ">
+          <text variable="container-title" font-style="italic"/>
+          <text variable="publisher"/>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </group>
+      </group>
+      <text variable="DOI" prefix=" https://doi.org/"/>
+    </layout>
+  </bibliography>
+</style>
