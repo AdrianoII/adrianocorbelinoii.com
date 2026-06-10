@@ -29,7 +29,7 @@ export function SocialLinks() {
               target={link.icon === "mail" ? undefined : "_blank"}
               rel={link.icon === "mail" ? undefined : "noopener noreferrer"}
             >
-              <Icon />
+              <Icon aria-hidden />
             </a>
           </Button>
         )

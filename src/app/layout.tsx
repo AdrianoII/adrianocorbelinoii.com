@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="flex min-h-dvh flex-col items-center px-4 sm:px-8">
-        <div className="flex w-full max-w-3xl flex-1 flex-col">
+        <div className="flex w-full max-w-4xl flex-1 flex-col">
           <NavBar />
           <main className="flex flex-1 flex-col">{children}</main>
         </div>

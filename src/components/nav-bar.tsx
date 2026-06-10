@@ -23,7 +23,7 @@ export function NavBar() {
         title="Homepage"
         className={cn(
           poiret.className,
-          "text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-4xl"
+          "text-sunset-animated text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-4xl"
         )}
       >
         {siteConfig.name}
@@ -40,9 +40,9 @@ export function NavBar() {
               className={cn(
                 "relative rounded-md px-3 py-2 text-base transition-colors lg:text-lg",
                 active
-                  ? "text-foreground"
+                  ? "text-primary"
                   : "text-muted-foreground hover:text-foreground",
-                "after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:bg-foreground after:transition-transform",
+                "after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:bg-primary after:transition-transform",
                 active ? "after:scale-x-100" : "hover:after:scale-x-100"
               )}
             >

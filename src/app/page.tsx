@@ -29,7 +29,7 @@ export default function HomePage() {
           <h1>{about.greeting}</h1>
           <p>{about.bio}</p>
         </article>
-        <p className="text-xl text-muted-foreground lg:text-2xl">
+        <p className="text-xl text-[hsl(var(--gold))] lg:text-2xl">
           {about.findMe}
         </p>
         <SocialLinks />

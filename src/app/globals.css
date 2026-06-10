@@ -4,25 +4,28 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    /* Sunset-over-Cuiabá dark palette: warm near-black, orange primary,
+       golden sun accents. Text kept at AA+ contrast on the dark ground. */
+    --background: 20 30% 6%;
+    --foreground: 30 50% 96%;
+    --card: 20 28% 8%;
+    --card-foreground: 30 50% 96%;
+    --popover: 20 28% 8%;
+    --popover-foreground: 30 50% 96%;
+    --primary: 18 95% 55%;
+    --primary-foreground: 20 45% 8%;
+    --secondary: 18 25% 16%;
+    --secondary-foreground: 30 50% 94%;
+    --muted: 18 20% 14%;
+    --muted-foreground: 28 22% 70%;
+    --accent: 18 28% 18%;
+    --accent-foreground: 30 50% 94%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 20 28% 18%;
+    --input: 20 28% 18%;
+    --ring: 18 95% 55%;
+    --gold: 42 95% 62%;
     --radius: 0.5rem;
   }
 }
@@ -33,6 +36,19 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* fixed sunset glow emanating from just above the top edge */
+    background-image: radial-gradient(
+        40rem 22rem at 50% -14rem,
+        hsl(42 95% 60% / 0.1),
+        transparent 70%
+      ),
+      radial-gradient(
+        60rem 30rem at 50% -16rem,
+        hsl(18 92% 55% / 0.16),
+        transparent 72%
+      );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
@@ -42,14 +58,45 @@
   }
 }
 
+@layer components {
+  /* sunset gradient text (orange → gold) for headings/brand */
+  .text-sunset {
+    @apply bg-gradient-to-r from-primary to-[hsl(var(--gold))] bg-clip-text text-transparent;
+  }
+
+  /* breathing variant: a gold band drifts slowly across the name */
+  .text-sunset-animated {
+    @apply bg-gradient-to-r from-primary via-[hsl(var(--gold))] to-primary bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: sunset-breathe 8s ease-in-out infinite;
+  }
+}
+
+@keyframes sunset-breathe {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-sunset-animated,
+  .slit-in-diagonal {
+    animation: none;
+  }
+}
+
 /* CV fragment (generated from cv/cv.qmd) — recreate the print template's look:
    gold uppercase section headers with a rule, and right-aligned dates. */
 @layer components {
   .cv-content h2 {
     margin: 1.5rem 0 0.5rem;
     padding-bottom: 0.2rem;
-    border-bottom: 1px solid hsl(43 60% 52% / 0.35);
-    color: hsl(43 65% 60%);
+    border-bottom: 1px solid hsl(18 90% 50% / 0.4);
+    color: hsl(var(--gold));
     font-size: 1.15rem;
     font-weight: 700;
     text-transform: uppercase;

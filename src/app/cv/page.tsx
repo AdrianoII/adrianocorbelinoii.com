@@ -52,7 +52,7 @@ export default function CvPage() {
         <div className="flex shrink-0 items-center gap-2">
           <Button asChild>
             <a href={cv.pdfUrl} download>
-              <Download />
+              <Download aria-hidden />
               Download PDF
             </a>
           </Button>
