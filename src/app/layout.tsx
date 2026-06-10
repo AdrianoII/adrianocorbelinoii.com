@@ -9,9 +9,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
-  icons: {
-    icon: "/favicon.svg",
-  },
 }
 
 export default function RootLayout({
