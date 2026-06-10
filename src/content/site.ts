@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Adriano Corbelino II",
   title: "Adriano Corbelino II",
-  description: "Adriano Corbelino II Homepage",
+  description:
+    "Adriano Corbelino II — Brazilian computer scientist and CS PhD student researching programming languages, type theory, and formal verification.",
   url: "https://www.adrianocorbelinoii.com",
   email: "adrianocorbelinoii@gmail.com",
 } as const

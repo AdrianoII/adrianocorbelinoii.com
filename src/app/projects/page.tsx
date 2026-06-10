@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Projects",
+  description:
+    "Projects by Adriano Corbelino II across programming languages, formal verification, and systems programming. Coming soon.",
   alternates: {
     canonical: "/projects",
   },

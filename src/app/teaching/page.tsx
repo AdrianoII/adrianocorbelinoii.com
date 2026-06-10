@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Teaching",
+  description:
+    "Teaching by Adriano Corbelino II — course materials and notes for students. Coming soon.",
   alternates: {
     canonical: "/teaching",
   },

@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "CV",
+  description:
+    "The CV of Adriano Corbelino II — education, research, publications, teaching, and industry experience, available as a downloadable PDF.",
   alternates: {
     canonical: "/cv",
   },
