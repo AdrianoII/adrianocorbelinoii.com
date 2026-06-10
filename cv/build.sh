@@ -2,7 +2,7 @@
 #
 # Renders the CV from the single Quarto source (cv.qmd) into the two committed
 # artifacts the site serves:
-#   ../public/Resume_EN.pdf          → download link
+#   ../public/cv_adrianoii.pdf          → download link
 #   ../src/content/cv.generated.html → injected into the /cv page
 #
 # Requires the Quarto CLI (https://quarto.org); Quarto bundles pandoc + TeX.
@@ -11,8 +11,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 echo "→ Rendering PDF (Quarto + LaTeX)…"
-quarto render cv.qmd --to pdf --output Resume_EN.pdf
-mv -f Resume_EN.pdf ../public/Resume_EN.pdf
+quarto render cv.qmd --to pdf --output cv_adrianoii.pdf
+mv -f cv_adrianoii.pdf ../public/cv_adrianoii.pdf
 
 echo "→ Rendering body-only HTML fragment (pandoc, with citations)…"
 quarto pandoc cv.qmd \
@@ -23,4 +23,4 @@ quarto pandoc cv.qmd \
   --wrap=none \
   --output ../src/content/cv.generated.html
 
-echo "✓ Wrote ../public/Resume_EN.pdf and ../src/content/cv.generated.html"
+echo "✓ Wrote ../public/cv_adrianoii.pdf and ../src/content/cv.generated.html"

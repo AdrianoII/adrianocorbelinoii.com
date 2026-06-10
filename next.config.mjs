@@ -10,6 +10,8 @@ const nextConfig = {
         destination: "/:path*",
         permanent: true,
       },
+      // The résumé PDF was renamed; keep the old URL working for existing links.
+      { source: "/Resume_EN.pdf", destination: "/cv_adrianoii.pdf", permanent: true },
     ]
   },
 }

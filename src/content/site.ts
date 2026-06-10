@@ -15,7 +15,7 @@ export const about = {
 export const cv = {
   // Authored in cv/cv.qmd (Quarto); `cv/build.sh` regenerates the PDF below
   // and the injected HTML fragment at src/content/cv.generated.html.
-  pdfUrl: "/Resume_EN.pdf",
+  pdfUrl: "/cv_adrianoii.pdf",
   sourceUrl: "https://github.com/AdrianoII/adrianocorbelinoii.com/blob/main/cv/cv.qmd",
   email: "adriano_vilargacorbelino@uml.edu",
   location: "Lowell, MA, USA",

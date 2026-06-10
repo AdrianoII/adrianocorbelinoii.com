@@ -1,7 +1,7 @@
 ---
 # Single source of truth for the CV.
 # Renders to two committed artifacts via ./build.sh:
-#   ../public/Resume_EN.pdf          (download)
+#   ../public/cv_adrianoii.pdf          (download)
 #   ../src/content/cv.generated.html (injected into the /cv page)
 #
 # Entry layout convention: a bold/italic line followed by a right-aligned
@@ -121,7 +121,7 @@ Languages
 Tools & Databases
 :   PostgreSQL, Microsoft SQL Server, .NET, Git, and QGIS
 
-Spoken
+Natural Languages
 :   Portuguese (native) and English (fluent)
 
 # Publications

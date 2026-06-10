@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import type { Metadata } from "next"
-import { Download, FileText } from "lucide-react"
+import { Download } from "lucide-react"
 
 import { cv, siteConfig } from "@/content/site"
 import { Button } from "@/components/ui/button"
@@ -54,12 +54,6 @@ export default function CvPage() {
             <a href={cv.pdfUrl} download>
               <Download />
               Download PDF
-            </a>
-          </Button>
-          <Button asChild variant="outline">
-            <a href={cv.sourceUrl} target="_blank" rel="noopener noreferrer">
-              <FileText />
-              Source
             </a>
           </Button>
         </div>

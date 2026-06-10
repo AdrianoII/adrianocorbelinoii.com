@@ -42,7 +42,7 @@ pnpm lint     # eslint
 The CV is authored once in [`cv/cv.qmd`](cv/cv.qmd) ([Quarto](https://quarto.org)) and
 rendered into two committed artifacts:
 
-- `public/Resume_EN.pdf` — the downloadable PDF
+- `public/cv_adrianoii.pdf` — the downloadable PDF
 - `src/content/cv.generated.html` — a body-only HTML fragment injected into `/cv`
 
 To regenerate after editing `cv/cv.qmd` (requires the Quarto CLI):

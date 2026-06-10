@@ -1,7 +1,7 @@
 name: Render CV
 
 # Regenerates the committed CV artifacts whenever the Quarto source changes:
-#   public/Resume_EN.pdf          (download)
+#   public/cv_adrianoii.pdf          (download)
 #   src/content/cv.generated.html (injected into the /cv page)
 on:
   push:
@@ -31,8 +31,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet public/Resume_EN.pdf src/content/cv.generated.html; then
-            git add public/Resume_EN.pdf src/content/cv.generated.html
+          if ! git diff --quiet public/cv_adrianoii.pdf src/content/cv.generated.html; then
+            git add public/cv_adrianoii.pdf src/content/cv.generated.html
             git commit -m "chore(cv): regenerate CV artifacts [skip ci]"
             git push
           else
