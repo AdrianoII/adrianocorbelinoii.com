@@ -7,7 +7,7 @@ import { Poiret_One } from "next/font/google"
 import { cn } from "@/lib/utils"
 import { navItems, siteConfig } from "@/content/site"
 
-const poiret = Poiret_One({ subsets: ["latin-ext"], weight: "400" })
+const poiret = Poiret_One({ subsets: ["latin"], weight: "400" })
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href)
