@@ -21,7 +21,7 @@ const cvHtml = readFileSync(
 
 export default function CvPage() {
   return (
-    <section className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 py-6">
+    <section className="flex flex-1 flex-col gap-6 py-6">
       <header className="flex flex-col gap-4 border-b border-border pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div className="space-y-1">
           <h1 className="text-3xl font-bold lg:text-4xl">{siteConfig.name}</h1>

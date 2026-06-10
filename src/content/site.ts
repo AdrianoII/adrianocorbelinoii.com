@@ -33,10 +33,11 @@ export type NavItem = {
 export const navItems = [
   { href: "/", label: "About" },
   { href: "/projects", label: "Projects" },
+  { href: "/teaching", label: "Teaching" },
   { href: "/cv", label: "CV" },
 ] as const satisfies readonly NavItem[]
 
-export type Route = "/" | "/cv" | "/projects"
+export type Route = "/" | "/cv" | "/projects" | "/teaching"
 
 export type SocialLink = {
   readonly label: string

@@ -18,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="flex min-h-dvh flex-col px-4 sm:px-8 lg:px-16">
-        <NavBar />
-        <main className="flex flex-1 flex-col">{children}</main>
+      <body className="flex min-h-dvh flex-col items-center px-4 sm:px-8">
+        <div className="flex w-full max-w-3xl flex-1 flex-col">
+          <NavBar />
+          <main className="flex flex-1 flex-col">{children}</main>
+        </div>
         <Analytics />
       </body>
     </html>
