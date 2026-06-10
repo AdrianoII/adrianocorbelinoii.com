@@ -12,8 +12,9 @@ format:
     geometry: "margin=0.55in"
     fontsize: 11pt
     colorlinks: true
-    linkcolor: "RoyalBlue"
-    urlcolor: "RoyalBlue"
+    linkcolor: sunsetlink
+    urlcolor: sunsetlink
+    citecolor: sunsetlink
     include-before-body: header.tex
     include-in-header:
       text: |
@@ -21,9 +22,11 @@ format:
         \usepackage{titlesec}
         \usepackage{xcolor}
         \usepackage{enumitem}
-        \definecolor{accent}{RGB}{198,143,44}
-        \definecolor{rulecol}{RGB}{135,34,19}
-        \titleformat{\section}{\large\scshape\bfseries\color{accent}}{}{0em}{}[{\color{rulecol}\titlerule}]
+        % Sunset palette from the website (deepened so it stays legible on white)
+        \definecolor{sunsetgold}{HTML}{C8860B}
+        \definecolor{sunsetorange}{HTML}{F2520D}
+        \definecolor{sunsetlink}{HTML}{C2410C}
+        \titleformat{\section}{\large\scshape\bfseries\color{sunsetgold}}{}{0em}{}[{\color{sunsetorange}\titlerule}]
         \titlespacing*{\section}{0pt}{10pt}{3pt}
         \setlength{\parindent}{0pt}
         \setlength{\parskip}{2pt}

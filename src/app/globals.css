@@ -125,9 +125,15 @@
   .cv-content li {
     margin: 0.15rem 0;
   }
-  /* bibliography (Publications) hanging indent */
+  /* bibliography (Publications): keep the [n] marker inline with the entry,
+     with a hanging indent for wrapped lines */
   .cv-content .csl-entry {
+    display: flex;
+    gap: 0.5rem;
     margin: 0.35rem 0;
+  }
+  .cv-content .csl-left-margin {
+    flex-shrink: 0;
   }
 }
 
