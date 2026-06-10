@@ -51,5 +51,5 @@ To regenerate after editing `cv/cv.qmd` (requires the Quarto CLI):
 ./cv/build.sh
 ```
 
-Commit the regenerated artifacts. A GitHub Action ([`.github/workflows/cv.yml`](.github/workflows/cv.yml))
-also re-renders and commits them automatically on any push that touches `cv/`.
+Then commit the regenerated artifacts (`public/cv_adrianoii.pdf` and
+`src/content/cv.generated.html`).
