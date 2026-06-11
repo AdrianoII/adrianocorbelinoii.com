@@ -199,8 +199,13 @@
   8% {
     opacity: 1;
   }
-  72% {
+  /* the photo finishes revealing ~75% in (clip passes the square's
+     corners); fade the fire out in sync so no halo lingers after */
+  55% {
     opacity: 1;
+  }
+  82% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
