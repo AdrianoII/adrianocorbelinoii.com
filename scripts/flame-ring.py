@@ -46,27 +46,28 @@ def tongue_path(deg, r_base, h, w, lean):
 
 
 def build():
-    r_base = 35.0
+    r_base = 43.0
     # height/width/lean pattern echoing the reference art: tall licks between
     # shorter ones, leans alternating so the ring reads as swirling
     pattern = [
-        (14.0, 7.0, 5.5), (7.0, 5.5, -3.0), (11.0, 6.5, 4.5),
-        (8.5, 6.0, -4.0), (13.5, 7.0, 6.0), (7.5, 5.5, -2.5),
-        (10.5, 6.5, 5.0), (9.0, 6.0, -4.5), (13.0, 7.0, 5.5),
-        (7.0, 5.5, -3.0), (11.5, 6.5, 4.0), (8.5, 6.0, -5.0),
-        (14.0, 7.0, 5.0), (8.0, 5.5, -3.5),
+        (6.5, 5.0, 2.8), (3.5, 4.2, -1.6), (5.5, 4.8, 2.2),
+        (4.0, 4.5, -2.0), (6.5, 5.0, 3.0), (3.8, 4.2, -1.4),
+        (5.0, 4.8, 2.5), (4.2, 4.5, -2.2), (6.0, 5.0, 2.8),
+        (3.5, 4.2, -1.6), (5.5, 4.8, 2.0), (4.0, 4.5, -2.5),
+        (6.5, 5.0, 2.5), (3.8, 4.2, -1.8),
     ]
     n = len(pattern)
-    # cooling fire ramp: pale gold core (only visible early in the reveal,
-    # while the photo clip is small) out to ember red at the tongue tips
+    # the fire lives entirely in the outer rim: the photo's clip edge sits
+    # at ~83% of the element radius throughout the reveal (constant-ratio
+    # animation), so the whole gold->orange->ember ramp is packed beyond it
     stops = [
         (0.00, "hsl(48 100% 85%)", 1.0),
-        (0.45, "hsl(46 100% 72%)", 1.0),
-        (0.62, "hsl(40 98% 60%)", 1.0),
-        (0.74, "hsl(24 96% 55%)", 1.0),
-        (0.84, "hsl(12 90% 48%)", 0.95),
-        (0.92, "hsl(5 75% 38%)", 0.8),
-        (0.985, "hsl(5 75% 38%)", 0.0),
+        (0.74, "hsl(48 100% 80%)", 1.0),
+        (0.82, "hsl(42 98% 62%)", 1.0),
+        (0.88, "hsl(24 96% 55%)", 1.0),
+        (0.93, "hsl(12 90% 48%)", 0.95),
+        (0.965, "hsl(5 75% 38%)", 0.8),
+        (0.99, "hsl(5 75% 38%)", 0.0),
     ]
     parts = ['<radialGradient id="fire" cx="50" cy="50" r="50" gradientUnits="userSpaceOnUse">']
     for off, color, op in stops:

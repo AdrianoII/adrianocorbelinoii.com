@@ -2,26 +2,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <radialGradient id="fire" cx="50" cy="50" r="50" gradientUnits="userSpaceOnUse">
     <stop offset="0.0" stop-color="hsl(48 100% 85%)" stop-opacity="1.0"/>
-    <stop offset="0.45" stop-color="hsl(46 100% 72%)" stop-opacity="1.0"/>
-    <stop offset="0.62" stop-color="hsl(40 98% 60%)" stop-opacity="1.0"/>
-    <stop offset="0.74" stop-color="hsl(24 96% 55%)" stop-opacity="1.0"/>
-    <stop offset="0.84" stop-color="hsl(12 90% 48%)" stop-opacity="0.95"/>
-    <stop offset="0.92" stop-color="hsl(5 75% 38%)" stop-opacity="0.8"/>
-    <stop offset="0.985" stop-color="hsl(5 75% 38%)" stop-opacity="0.0"/>
+    <stop offset="0.74" stop-color="hsl(48 100% 80%)" stop-opacity="1.0"/>
+    <stop offset="0.82" stop-color="hsl(42 98% 62%)" stop-opacity="1.0"/>
+    <stop offset="0.88" stop-color="hsl(24 96% 55%)" stop-opacity="1.0"/>
+    <stop offset="0.93" stop-color="hsl(12 90% 48%)" stop-opacity="0.95"/>
+    <stop offset="0.965" stop-color="hsl(5 75% 38%)" stop-opacity="0.8"/>
+    <stop offset="0.99" stop-color="hsl(5 75% 38%)" stop-opacity="0.0"/>
   </radialGradient>
-  <circle cx="50" cy="50" r="36.5" fill="url(#fire)"/>
-  <path fill="url(#fire)" d="M46.5 15.0C42.3 9.1 47.6 4.9 55.5 1.0C52.5 7.3 55.6 12.5 53.5 15.0Z"/>
-  <path fill="url(#fire)" d="M62.7 17.3C61.0 13.2 64.4 12.5 65.5 10.9C65.6 14.4 69.7 19.2 67.7 19.7Z"/>
-  <path fill="url(#fire)" d="M75.3 25.6C76.5 19.7 82.1 21.4 88.8 24.8C83.4 26.0 82.2 31.0 79.4 30.7Z"/>
-  <path fill="url(#fire)" d="M83.5 39.3C86.1 35.0 89.2 37.1 91.5 36.4C88.3 39.4 86.7 46.6 84.8 45.1Z"/>
-  <path fill="url(#fire)" d="M84.9 54.4C91.4 51.5 94.1 57.7 95.9 66.6C90.8 62.1 85.2 63.8 83.3 61.2Z"/>
-  <path fill="url(#fire)" d="M79.1 69.7C83.6 69.1 83.6 72.6 84.8 74.5C81.3 73.5 75.7 76.1 75.6 74.0Z"/>
-  <path fill="url(#fire)" d="M68.1 80.1C73.5 82.4 70.5 87.4 65.2 93.2C65.7 87.7 61.3 85.5 62.3 82.9Z"/>
-  <path fill="url(#fire)" d="M53.0 85.0C56.6 88.8 53.9 91.5 54.5 94.0C52.0 90.0 45.2 86.6 47.0 85.0Z"/>
-  <path fill="url(#fire)" d="M38.0 83.1C39.4 89.8 32.9 91.0 24.2 90.9C29.5 86.9 28.8 81.2 31.7 80.0Z"/>
-  <path fill="url(#fire)" d="M24.4 74.0C24.1 78.4 20.8 77.6 19.0 78.5C20.5 75.3 18.9 69.2 20.9 69.7Z"/>
-  <path fill="url(#fire)" d="M16.6 61.0C12.8 65.8 8.4 62.0 3.8 56.4C9.3 57.4 12.7 53.2 15.2 54.6Z"/>
-  <path fill="url(#fire)" d="M15.2 45.1C10.9 47.9 9.0 44.7 6.5 45.2C10.8 43.4 15.5 37.2 16.5 39.3Z"/>
-  <path fill="url(#fire)" d="M20.5 30.9C13.2 30.5 13.2 23.8 14.8 15.5C18.0 21.6 24.2 22.2 24.8 25.4Z"/>
-  <path fill="url(#fire)" d="M32.3 19.7C27.9 18.1 29.2 14.8 28.2 12.8C31.5 15.2 38.2 15.3 37.3 17.3Z"/>
+  <circle cx="50" cy="50" r="44.5" fill="url(#fire)"/>
+  <path fill="url(#fire)" d="M47.5 7.0C44.5 4.3 48.1 2.3 52.8 0.5C51.3 3.4 54.0 5.8 52.5 7.0Z"/>
+  <path fill="url(#fire)" d="M66.8 10.3C65.1 7.9 67.6 7.9 68.7 7.4C68.8 9.2 72.0 12.1 70.5 12.2Z"/>
+  <path fill="url(#fire)" d="M82.1 21.3C82.1 17.6 85.5 19.2 89.3 21.5C86.6 22.1 86.8 25.6 85.1 25.1Z"/>
+  <path fill="url(#fire)" d="M91.4 38.2C92.5 35.2 94.1 37.2 95.4 37.6C93.9 39.1 93.4 43.8 92.4 42.6Z"/>
+  <path fill="url(#fire)" d="M92.5 57.1C95.8 54.8 96.9 58.8 97.6 63.9C95.1 61.7 92.2 63.7 91.4 62.0Z"/>
+  <path fill="url(#fire)" d="M84.9 75.2C87.7 74.2 87.2 76.7 87.5 78.1C85.6 77.6 82.1 79.9 82.3 78.5Z"/>
+  <path fill="url(#fire)" d="M70.8 87.7C74.3 88.3 71.9 91.2 68.6 94.3C68.8 91.7 65.6 91.2 66.5 89.8Z"/>
+  <path fill="url(#fire)" d="M52.3 93.0C55.0 94.8 52.7 96.0 52.2 97.2C51.0 95.3 46.4 93.8 47.8 93.0Z"/>
+  <path fill="url(#fire)" d="M33.6 89.8C35.2 93.4 31.2 93.5 26.2 92.9C28.8 91.2 27.3 88.0 29.1 87.7Z"/>
+  <path fill="url(#fire)" d="M17.7 78.5C18.1 81.3 15.9 80.3 14.6 80.2C15.3 78.6 13.8 74.6 15.1 75.2Z"/>
+  <path fill="url(#fire)" d="M8.6 61.9C7.0 65.2 4.7 62.4 2.3 58.8C4.9 59.4 6.3 56.0 7.5 57.2Z"/>
+  <path fill="url(#fire)" d="M7.6 42.6C5.3 44.9 4.7 42.5 3.6 42.0C5.7 41.0 8.2 36.8 8.6 38.2Z"/>
+  <path fill="url(#fire)" d="M14.8 25.1C10.8 25.8 11.5 21.8 12.9 17.2C14.3 20.1 18.0 19.3 17.9 21.2Z"/>
+  <path fill="url(#fire)" d="M29.5 12.2C26.5 11.8 27.9 9.9 28.1 8.6C29.7 9.7 34.1 9.2 33.2 10.3Z"/>
 </svg>
