@@ -3,7 +3,9 @@
 home page photo reveal (.flame-ring). Everything is baked into one image
 (cooling fire gradient + S-curved flame tongues) so the browser animates a
 single static texture with compositor-only transforms.
-Run from the repo root: python3 scripts/flame-ring.py
+
+The page serves a pre-rasterized bitmap of it; after editing, run both:
+  python3 scripts/flame-ring.py && node scripts/rasterize-flame.mjs
 """
 import math
 from pathlib import Path
