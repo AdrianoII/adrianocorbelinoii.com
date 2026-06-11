@@ -9,6 +9,14 @@ const icons: Record<SocialLink["icon"], LucideIcon> = {
   linkedin: Linkedin,
 }
 
+/* one sunset hue per icon; hover:text-* repeats the color so the ghost
+   variant's hover:text-accent-foreground doesn't wash it out */
+const iconColors: Record<SocialLink["icon"], string> = {
+  mail: "text-[hsl(var(--gold))] hover:text-[hsl(var(--gold))]",
+  github: "text-primary hover:text-primary",
+  linkedin: "text-[hsl(var(--rose))] hover:text-[hsl(var(--rose))]",
+}
+
 export function SocialLinks() {
   return (
     <div className="flex items-center justify-center gap-4">
@@ -20,7 +28,7 @@ export function SocialLinks() {
             asChild
             variant="ghost"
             size="icon"
-            className="size-12 [&_svg]:size-7"
+            className={`size-12 [&_svg]:size-7 ${iconColors[link.icon]}`}
           >
             <a
               href={link.href}

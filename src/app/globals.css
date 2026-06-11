@@ -26,6 +26,7 @@
     --input: 20 28% 18%;
     --ring: 18 95% 55%;
     --gold: 42 95% 62%;
+    --rose: 340 85% 66%;
     --radius: 0.5rem;
   }
 }
@@ -62,6 +63,11 @@
   /* sunset gradient text (orange → gold) for headings/brand */
   .text-sunset {
     @apply bg-gradient-to-r from-primary to-[hsl(var(--gold))] bg-clip-text text-transparent;
+  }
+
+  /* twilight gradient text (gold → orange → rose) — the sky band above the sun */
+  .text-twilight {
+    @apply bg-gradient-to-r from-[hsl(var(--gold))] via-primary to-[hsl(var(--rose))] bg-clip-text text-transparent;
   }
 
   /* breathing variant: a gold band drifts slowly across the name */

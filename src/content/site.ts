@@ -8,8 +8,12 @@ export const siteConfig = {
 } as const
 
 export const about = {
-  greeting: "Hello There! 👋",
-  bio: "I am a Brazilian computer scientist who is constantly thrilled with the impact type systems can have on users. I have experience working with software development and my three main interests are Type Theory, Formal Verification, and Systems Programming.",
+  greeting: "Hello There!",
+  // **word** marks a gold highlight; [text](url) becomes a rose link.
+  bio: [
+    "I am Adriano, a third-year Computer Science PhD student at the **University of Massachusetts Lowell**, advised by [Dr. Paul Downen](https://pauldownen.com/).",
+    "My research explores how we can merge programming paradigms — using **codata** to bridge the gap between the **functional** and **object-oriented** worlds. If that sounds interesting, check out my current project **CoPy**, which takes the converse route and brings **copatterns** to Python.",
+  ],
   findMe: "👇 You can find me on 👇",
 } as const
 
