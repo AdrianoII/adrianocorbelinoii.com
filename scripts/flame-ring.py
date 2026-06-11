@@ -64,9 +64,14 @@ def build():
     # the fire lives entirely in the outer rim: the photo's clip edge sits
     # at ~83% of the element radius throughout the reveal (constant-ratio
     # animation), so the whole gold->orange->ember ramp is packed beyond it
+    # the interior is transparent: it is normally covered by the photo, but
+    # browsers that animate clip-path on the main thread (Safari) can lag a
+    # frame behind the composited ring — a pale fill would flash as a white
+    # inner border, transparency just shows the dark page
     stops = [
-        (0.00, "hsl(48 100% 85%)", 1.0),
-        (0.74, "hsl(48 100% 80%)", 1.0),
+        (0.00, "hsl(48 100% 85%)", 0.0),
+        (0.70, "hsl(48 100% 85%)", 0.0),
+        (0.77, "hsl(48 100% 80%)", 1.0),
         (0.82, "hsl(42 98% 62%)", 1.0),
         (0.88, "hsl(24 96% 55%)", 1.0),
         (0.93, "hsl(12 90% 48%)", 0.95),

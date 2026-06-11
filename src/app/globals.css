@@ -59,7 +59,11 @@
      layer so the clip-path animation runs on the compositor. */
   .photo-reveal {
     will-change: clip-path;
-    animation: photo-reveal 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
+    /* WebKit doesn't reliably layerize on will-change: clip-path alone */
+    transform: translateZ(0);
+    /* the 0.25s delay lets the photo + ring decodes finish before motion
+       starts, avoiding dropped frames at ignition on mobile */
+    animation: photo-reveal 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.25s both;
   }
 }
 
@@ -91,7 +95,8 @@
     pointer-events: none;
     background: url("/flame-ring.webp") center / 100% 100% no-repeat;
     will-change: transform, opacity;
-    animation: flame-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
+    /* delay matches .photo-reveal — the two must stay in lockstep */
+    animation: flame-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.25s both;
   }
 
   /* breathing variant: cross-fades between two static gradients via an
