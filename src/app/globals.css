@@ -55,8 +55,10 @@
 
 @layer utilities {
   /* sunrise reveal: the photo never moves — an expanding circular clip,
-     led by the sun disc, uncovers it in place */
+     led by the flame ring, uncovers it in place. will-change promotes the
+     layer so the clip-path animation runs on the compositor. */
   .photo-reveal {
+    will-change: clip-path;
     animation: photo-reveal 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
   }
 }
@@ -72,77 +74,55 @@
     @apply bg-gradient-to-r from-[hsl(var(--gold))] via-primary to-[hsl(var(--rose))] bg-clip-text text-transparent;
   }
 
-  /* the fire ring leading the reveal: an Okami-like ramp that cools with
-     the animation — the pale-gold core only shows early, the ember-red rim
-     late. A flame-silhouette SVG mask shapes the edge into licks, and the
-     ring slowly spins while expanding (cheap: mask is static, transform is
-     compositor-only). May spill past the frame. Base opacity 0 = settled. */
-  .sun-disc {
+  /* the fire ring leading the reveal — one pre-baked SVG texture holding
+     the whole look (cooling fire gradient, S-curved tongues, charred inner
+     edge: see scripts/flame-ring.py), so the animation is compositor-only:
+     scale/rotate/opacity on a single static image, no per-frame painting.
+     May spill past the frame. Base opacity 0 = settled state. */
+  .flame-ring {
     position: absolute;
     inset: 0;
     margin: auto;
     width: 70%;
     aspect-ratio: 1;
     opacity: 0;
-    background: radial-gradient(
-      circle closest-side,
-      hsl(48 100% 85%) 0%,
-      hsl(46 100% 72%) 45%,
-      hsl(40 98% 60%) 62%,
-      hsl(24 96% 55%) 74%,
-      hsl(12 90% 48% / 0.95) 84%,
-      hsl(5 75% 38% / 0.8) 92%,
-      transparent 98.5%
-    );
-    mask: url("/flame-mask.svg") center / 100% 100% no-repeat;
-    animation: disc-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
+    background: url("/flame-ring.svg") center / 100% 100% no-repeat;
+    will-change: transform, opacity;
+    animation: flame-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
   }
 
-  /* thin charred-paper line hugging the photo edge, just inside the flame;
-     its own silhouette mask counter-spins against the fire ring */
-  .char-ring {
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 70%;
-    aspect-ratio: 1;
-    opacity: 0;
-    background: radial-gradient(
-      circle closest-side,
-      transparent 64%,
-      hsl(15 45% 10% / 0.7) 68%,
-      hsl(15 40% 7% / 0.75) 72%,
-      transparent 76%
-    );
-    mask: url("/char-mask.svg") center / 100% 100% no-repeat;
-    animation: char-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
-  }
-
-  /* breathing variant: a gold band drifts slowly across the name */
+  /* breathing variant: cross-fades between two static gradients via an
+     ::after overlay (content: attr(data-text)) — opacity-only animation,
+     so the breathing never repaints the text */
   .text-sunset-animated {
-    @apply bg-gradient-to-r from-primary via-[hsl(var(--gold))] to-primary bg-clip-text text-transparent;
-    background-size: 200% auto;
-    animation: sunset-breathe 8s ease-in-out infinite;
+    @apply relative inline-block bg-gradient-to-r from-primary to-[hsl(var(--gold))] bg-clip-text text-transparent;
+  }
+  .text-sunset-animated::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    @apply bg-gradient-to-r from-[hsl(var(--gold))] to-primary bg-clip-text text-transparent;
+    opacity: 0;
+    animation: sunset-cross 8s ease-in-out infinite;
   }
 }
 
-@keyframes sunset-breathe {
+@keyframes sunset-cross {
   0%,
   100% {
-    background-position: 0% 50%;
+    opacity: 0;
   }
   50% {
-    background-position: 100% 50%;
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* base styles are the settled state: photo unclipped, placeholder and
-     disc hidden, halo visible but static */
-  .text-sunset-animated,
+  /* base styles are the settled state: photo unclipped, flame hidden,
+     brand showing its static gradient */
+  .text-sunset-animated::after,
   .photo-reveal,
-  .sun-disc,
-  .char-ring {
+  .flame-ring {
     animation: none;
   }
 }
@@ -204,9 +184,8 @@
   }
 }
 
-/* scale and rotate are independent properties so the spin composes with
-   the expansion without re-rasterizing the mask */
-@keyframes disc-expand {
+/* scale and rotate are independent properties; both run on the compositor */
+@keyframes flame-expand {
   0% {
     opacity: 1;
     scale: 0.05;
@@ -219,22 +198,6 @@
     opacity: 0;
     scale: 2.8;
     rotate: 70deg;
-  }
-}
-
-@keyframes char-expand {
-  0% {
-    opacity: 1;
-    scale: 0.05;
-    rotate: 0deg;
-  }
-  72% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    scale: 2.8;
-    rotate: -50deg;
   }
 }
 

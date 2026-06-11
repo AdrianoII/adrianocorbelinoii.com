@@ -21,6 +21,8 @@ export function NavBar() {
       <Link
         href="/"
         title="Homepage"
+        // data-text feeds the ::after overlay that breathes the gradient
+        data-text={siteConfig.name}
         className={cn(
           poiret.className,
           "text-sunset-animated text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-4xl"
