@@ -47,7 +47,9 @@ function renderBio(text: string) {
 export default function HomePage() {
   return (
     <section className="flex flex-1 flex-col items-center justify-center gap-8 py-8">
-      <div className="slit-in-diagonal relative aspect-square w-full max-w-sm">
+      <div className="relative aspect-square w-full max-w-sm">
+        <div className="sun-disc" aria-hidden />
+        <div className="char-ring" aria-hidden />
         <Image
           src="/profile.jpg"
           alt="Picture of Adriano Corbelino II"
@@ -55,7 +57,7 @@ export default function HomePage() {
           priority
           quality={90}
           sizes="(min-width: 640px) 384px, 90vw"
-          className="object-contain"
+          className="photo-reveal rounded-[30%] object-contain"
         />
       </div>
 

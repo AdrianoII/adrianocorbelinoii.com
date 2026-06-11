@@ -54,8 +54,10 @@
 }
 
 @layer utilities {
-  .slit-in-diagonal {
-    animation: slit-in-diagonal 0.5s linear 0s both;
+  /* sunrise reveal: the photo never moves — an expanding circular clip,
+     led by the sun disc, uncovers it in place */
+  .photo-reveal {
+    animation: photo-reveal 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
   }
 }
 
@@ -68,6 +70,52 @@
   /* twilight gradient text (gold → orange → rose) — the sky band above the sun */
   .text-twilight {
     @apply bg-gradient-to-r from-[hsl(var(--gold))] via-primary to-[hsl(var(--rose))] bg-clip-text text-transparent;
+  }
+
+  /* the fire ring leading the reveal: an Okami-like ramp that cools with
+     the animation — the pale-gold core only shows early, the ember-red rim
+     late. A flame-silhouette SVG mask shapes the edge into licks, and the
+     ring slowly spins while expanding (cheap: mask is static, transform is
+     compositor-only). May spill past the frame. Base opacity 0 = settled. */
+  .sun-disc {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 70%;
+    aspect-ratio: 1;
+    opacity: 0;
+    background: radial-gradient(
+      circle closest-side,
+      hsl(48 100% 85%) 0%,
+      hsl(46 100% 72%) 45%,
+      hsl(40 98% 60%) 62%,
+      hsl(24 96% 55%) 74%,
+      hsl(12 90% 48% / 0.95) 84%,
+      hsl(5 75% 38% / 0.8) 92%,
+      transparent 98.5%
+    );
+    mask: url("/flame-mask.svg") center / 100% 100% no-repeat;
+    animation: disc-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
+  }
+
+  /* thin charred-paper line hugging the photo edge, just inside the flame;
+     its own silhouette mask counter-spins against the fire ring */
+  .char-ring {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 70%;
+    aspect-ratio: 1;
+    opacity: 0;
+    background: radial-gradient(
+      circle closest-side,
+      transparent 64%,
+      hsl(15 45% 10% / 0.7) 68%,
+      hsl(15 40% 7% / 0.75) 72%,
+      transparent 76%
+    );
+    mask: url("/char-mask.svg") center / 100% 100% no-repeat;
+    animation: char-expand 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0s both;
   }
 
   /* breathing variant: a gold band drifts slowly across the name */
@@ -89,8 +137,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* base styles are the settled state: photo unclipped, placeholder and
+     disc hidden, halo visible but static */
   .text-sunset-animated,
-  .slit-in-diagonal {
+  .photo-reveal,
+  .sun-disc,
+  .char-ring {
     animation: none;
   }
 }
@@ -143,19 +195,46 @@
   }
 }
 
-@keyframes slit-in-diagonal {
+@keyframes photo-reveal {
   0% {
-    transform: translateZ(-800px) rotate3d(-1, 1, 0, -90deg);
-    animation-timing-function: ease-in;
-    opacity: 0;
+    clip-path: circle(0% at 50% 50%);
   }
-  54% {
-    transform: translateZ(-160px) rotate3d(-1, 1, 0, -87deg);
-    animation-timing-function: ease-in-out;
+  100% {
+    clip-path: circle(75% at 50% 50%);
+  }
+}
+
+/* scale and rotate are independent properties so the spin composes with
+   the expansion without re-rasterizing the mask */
+@keyframes disc-expand {
+  0% {
+    opacity: 1;
+    scale: 0.05;
+    rotate: 0deg;
+  }
+  72% {
     opacity: 1;
   }
   100% {
-    transform: translateZ(0) rotate3d(-1, 1, 0, 0);
-    animation-timing-function: ease-out;
+    opacity: 0;
+    scale: 2.8;
+    rotate: 70deg;
   }
 }
+
+@keyframes char-expand {
+  0% {
+    opacity: 1;
+    scale: 0.05;
+    rotate: 0deg;
+  }
+  72% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 2.8;
+    rotate: -50deg;
+  }
+}
+
