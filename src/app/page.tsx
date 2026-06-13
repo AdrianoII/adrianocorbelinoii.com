@@ -48,7 +48,6 @@ export default function HomePage() {
   return (
     <section className="flex flex-1 flex-col items-center justify-center gap-8 py-8">
       <div className="relative aspect-square w-full max-w-sm">
-        <div className="flame-ring" aria-hidden />
         <Image
           src="/profile.jpg"
           alt="Picture of Adriano Corbelino II"
